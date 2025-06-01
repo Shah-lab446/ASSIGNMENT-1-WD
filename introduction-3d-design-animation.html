@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animating Your Future: Crafting Success in 3D Design & Animation</title>
+  <meta name="description" content="Learn the fundamentals and career opportunities in 3D design and animation, including modeling, texturing, rigging, and rendering." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/introduction-3d-design-animation.css" />
+  <link rel="icon" type="image/png" sizes="16x16" href="Media/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Media/favicon-32x32.png" />
+</head>
+<body>
+<nav role="navigation" aria-label="Main navigation">
+    <div class="logo">My Career Path</div>
+    <ul>
+      <li><a href="introduction-3d-design-animation.html">Home</a></li>
+      <li><a href="step-by-step-3d-animation.html">Step-by-Step Guide</a></li>
+      <li><a href="inspirations-resources.html">Inspirations & Resources</a></li>
+    </ul>
+  </nav>
+
+  <section id="media" class="media-box fade-in">
+    <div class="media-container">
+      <a class="media-box-link" href="https://youtu.be/vtR61YLAnio?si=MykazNVgI87mBPQk" target="_blank" rel="noopener">
+        <div class="media-box">
+          <div class="media-video">
+            <video autoplay loop muted playsinline aria-label="Introductory 3D animation video">
+              <source src="Media/Video intro.mp4" type="video/mp4" />
+              <source src="Media/Video intro.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </a>
+      <div class="youtube-link">
+        <a href="https://youtu.be/vtR61YLAnio?si=MykazNVgI87mBPQk" target="_blank" rel="noopener">Animation by Dillongoo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combined Symmetrical Grid Intro Section -->
+  <section id="intro-z" class="z-pattern" role="main">
+    <div class="z-cell cell-5 fade-in" tabindex="0">
+      <div class="content-wrapper left-align">
+        <h2>New Content Area</h2>
+        <p>
+          Hi, I’m Muhammad Naqiuddin Shah! I’m an aspiring 3D designer and animator, passionate about bringing ideas to life through digital artistry. I’m currently learning industry tools like Blender and Maya to create immersive visuals and dynamic animations. My goal is to craft engaging stories and push creative boundaries in design. Let’s create something incredible!
+        </p>
+      </div>
+    </div>
+    <div class="z-cell cell-1 fade-in" tabindex="0">
+      <div class="content-wrapper left-align">
+        <h1>Welcome to Introduction to 3D Design and Animation</h1>
+        <p>
+          Explore the world of 3D design and animation, from modeling and texturing to rigging and rendering. This site is your gateway to creating digital art and animations that stand out.
+        </p>
+        
+      </div>
+    </div>
+    <div class="z-cell cell-2 fade-in" tabindex="0">
+      <div class="content-wrapper right-align">
+        <h2>What’s 3D Animation?</h2>
+        <p>
+          3D animation is the art of making digital models move and interact using specialized software. It brings characters and scenes to life, making them walk, talk, and express emotions in a realistic way.
+        </p>
+        
+      </div>
+    </div>
+    <div class="z-cell cell-3 fade-in" tabindex="0">
+      <div class="content-wrapper left-align">
+        <h2>Why I Chose Animation &amp; 3D Design?</h2>
+        <ul>
+          <li><strong>Endless Creativity:</strong> Turn your ideas into stunning visuals.</li>
+          <li><strong>In-Demand Skills:</strong> Sought after in movies, games, advertising, and VR.</li>
+          <li><strong>Career Opportunities:</strong> From game development to film, the possibilities are vast.</li>
+        </ul>
+        
+      </div>
+    </div>
+    <div class="z-cell cell-4 fade-in" tabindex="0">
+      <div class="content-wrapper right-align">
+        <h2>Key Tools Used in the Industry</h2>
+        <ul>
+          <li><strong>Blender:</strong> Free, open-source, and beginner-friendly.</li>
+          <li><strong>Autodesk Maya:</strong> The industry standard for film studios.</li>
+          <li><strong>Unreal Engine:</strong> Powering the latest in gaming and real-time rendering.</li>
+        </ul>
+        
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Scroll animation for fade-in elements
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+  <footer>
+    <div class="footer-container">
+      <p>Follow me on social media:</p>
+      <ul class="social-links">
+        <li>
+          <a href="https://www.tiktok.com/@5hah123?_t=ZS-8wk4Kzi2cDv&_r=1" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" class="social-logo" />
+            TikTok
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ivcharles?igsh=MWVycXZ5dHdwOGRtdw==" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-logo" />
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/share/1CdEdcApMa/" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" class="social-logo" />
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

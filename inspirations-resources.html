@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inspirations & Resources</title>
+  <meta name="description" content="Inspirations and resources for 3D animation and design." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/inspirations-resources.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="Media/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Media/favicon-32x32.png" />
+</head>
+<body>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="logo">My Career Path</div>
+    <ul>
+      <li><a href="introduction-3d-design-animation.html">Home</a></li>
+      <li><a href="step-by-step-3d-animation.html">Step-by-Step Guide</a></li>
+      <li><a href="inspirations-resources.html" class="active">Inspirations & Resources</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" role="main">
+    <section class="content fade-in inspirations-resources">
+      <h1>Inspirations & Resources</h1>
+      <div class="inspirations">
+        <h2>Where I Get Inspired</h2>
+        <ul>
+          <li><strong>ArtStation:</strong> Check out portfolios from some of the best 3D artists and animators out there. <a href="https://www.artstation.com" target="_blank" rel="noopener noreferrer">Visit ArtStation</a></li>
+          <li><strong>Pixar Animation Studios:</strong> Watch behind-the-scenes videos and learn from the pros. <a href="https://www.pixar.com" target="_blank" rel="noopener noreferrer">Visit Pixar</a></li>
+          <li><strong>CGSociety:</strong> Join a community of digital artists sharing cool stuff and tutorials. <a href="https://www.cgsociety.org" target="_blank" rel="noopener noreferrer">Visit CGSociety</a></li>
+          <li><strong>YouTube Channels:</strong> Channels like Blender Guru, Gleb Alexandrov, and FlippedNormals have awesome tutorials and inspiration.</li>
+        </ul>
+      </div>
+      <div class="video-box">
+        <video autoplay loop muted playsinline>
+          <source src="Media/ezgif-5c049e76dc7706.mp4" type="video/mp4" />
+          <source src="Media/ezgif-5ad9b69f4b47f8.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="resources">
+        <h2>Helpful Resources</h2>
+        <ul>
+          <li><strong>Blender:</strong> A free and open-source 3D creation tool that's great for beginners. <a href="https://www.blender.org" target="_blank" rel="noopener noreferrer">Download Blender</a></li>
+          <li><strong>Autodesk Maya:</strong> The industry standard for animation and modeling. <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener noreferrer">Learn about Maya</a></li>
+          <li><strong>Unreal Engine:</strong> A powerful tool for real-time 3D creation used in games and visualization. <a href="https://www.unrealengine.com" target="_blank" rel="noopener noreferrer">Explore Unreal Engine</a></li>
+          <li><strong>Udemy & Coursera:</strong> Online platforms with courses on 3D design and animation, from basics to advanced stuff.</li>
+          <li><strong>Poly Haven:</strong> Free high-quality 3D assets and HDRIs you can use in your projects. <a href="https://polyhaven.com" target="_blank" rel="noopener noreferrer">Visit Poly Haven</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script>
+    // Scroll animation for fade-in elements
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+  <footer>
+    <div class="footer-container">
+      <p>Follow me on social media:</p>
+      <ul class="social-links">
+        <li>
+          <a href="https://www.tiktok.com/@5hah123?_t=ZS-8wk4Kzi2cDv&_r=1" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" class="social-logo" />
+            TikTok
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ivcharles?igsh=MWVycXZ5dHdwOGRtdw==" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-logo" />
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/share/1CdEdcApMa/" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook" class="social-logo" />
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
