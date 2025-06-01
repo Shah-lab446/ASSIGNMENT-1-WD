@@ -1,0 +1,123 @@
+/* step-by-step-3d-animation.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --color-primary: #66ccff;
+  --color-accent: #ff66cc;
+  --color-text: #e0e0e0;
+  --color-bg: #121212;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+nav, footer, .content, .media-box, .media-video, .youtube-link, .play-btn, .media-container {
+  /* ...existing code for shared layout and video box... */
+}
+
+.z-container {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.z-step {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #66ccff33;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease, transform 0.3s ease, background 0.3s;
+  color: #e0e0e0;
+  font-family: 'Poppins', Arial, sans-serif;
+  text-shadow: none;
+  position: relative;
+  z-index: 0;
+  text-align: left;
+}
+
+.z-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.z-step:nth-child(even),
+.z-step:nth-child(odd) {
+  /* Remove gradient backgrounds, use default */
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.z-step:nth-child(1):hover, .z-step:nth-child(1):focus {
+  background: linear-gradient(120deg, #66ccff 60%, #aaffec 100%);
+  color: #181818;
+}
+
+.z-step:nth-child(2):hover, .z-step:nth-child(2):focus {
+  background: linear-gradient(120deg, #ff66cc 60%, #ffb347 100%);
+  color: #181818;
+}
+
+.z-step:nth-child(3):hover, .z-step:nth-child(3):focus {
+  background: linear-gradient(120deg, #aaffec 60%, #66ccff 100%);
+  color: #181818;
+}
+
+.z-step:nth-child(4):hover, .z-step:nth-child(4):focus {
+  background: linear-gradient(120deg, #ffb347 0%, #ff66cc 100%) !important;
+  color: #181818 !important;
+  box-shadow: 0 8px 32px 0 #ff66cc44, 0 2px 12px #ffb34733, 0 0 20px 5px #ffb347aa;
+  border: 2px solid var(--color-accent);
+  outline: none;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+.z-step:nth-of-type(5):hover, .z-step:nth-of-type(5):focus,
+.z-step:nth-child(5):hover, .z-step:nth-child(5):focus {
+  background: linear-gradient(120deg, #8e54e9 0%, #43cea2 100%) !important; /* Unique purple to teal gradient */
+  color: #181818 !important;
+  box-shadow: 0 8px 32px 0 #43cea244, 0 2px 12px #8e54e933, 0 0 20px 5px #43cea2aa;
+  border: 2px solid var(--color-accent);
+  outline: none;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+.z-step:hover, .z-step:focus {
+  box-shadow: 0 8px 32px 0 #ff66cc44, 0 2px 12px #66ccff33, 0 0 20px 5px #66ccffaa;
+  border: 2px solid var(--color-accent);
+  outline: none;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+.z-step:hover h2, .z-step:focus h2,
+.z-step:hover strong, .z-step:focus strong {
+  color: #181818;
+}
+
+@media (max-width: 1000px) {
+  .z-container {
+    max-width: 100vw;
+    padding: 0 0.5rem;
+  }
+  .z-step {
+    max-width: 100vw;
+    padding: 1.2rem 0.5rem;
+  }
+}

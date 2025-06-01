@@ -1,0 +1,304 @@
+/* introduction-3d-design-animation.css */
+
+/* --- Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- CSS Variables (Root) --- */
+:root {
+  --color-primary: #66ccff;
+  --color-accent: #ff66cc;
+  --color-text: #e0e0e0;
+  --color-bg: #121212;
+}
+
+/* --- Base Styles --- */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+  -moz-osx-font-smoothing: grayscale; /* Smoother font rendering */
+}
+
+/* --- Shared Layout & Media Box Styles (Assuming existing code is here) --- */
+/* These selectors are kept as placeholders for your existing layout rules */
+nav,
+footer,
+.content,
+.media-box,
+.media-video,
+.youtube-link,
+.play-btn,
+.media-container {
+  /* ...existing code for shared layout and video box... */
+}
+
+/* --- Z-Pattern Layout --- */
+.z-pattern {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile-first approach */
+  grid-template-rows: auto auto;
+  gap: 2.5rem 2.5rem;
+  box-sizing: border-box;
+  align-items: stretch;
+  justify-items: stretch;
+  position: relative;
+  z-index: 1;
+  background: none;
+}
+
+/* Z-Pattern Vertical Line Decorator */
+.z-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  opacity: 0.10;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* --- Z-Cell Styling --- */
+.z-cell {
+  width: 100%;
+  min-width: 0;
+  background: rgba(26, 26, 26, 0.98);
+  padding: 2.2rem 2.5rem;
+  border-radius: 1.3rem;
+  box-shadow: 0 4px 24px #66ccff22;
+  color: var(--color-text);
+  font-size: 1.15rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  transition: box-shadow 0.3s, transform 0.3s, background 0.4s, color 0.4s, border 0.3s; /* Added border to transition */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items vertically in a column flex container */
+  justify-content: center; /* Centers items horizontally in a column flex container */
+  text-align: center; /* Centers inline text within the cell */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  border: 2px solid #23272b;
+}
+
+/* Specific Z-Cell Hover/Focus Backgrounds & Colors */
+.z-cell.cell-1:focus,
+.z-cell.cell-1:hover {
+  background: linear-gradient(120deg, #66ccff 60%, #aaffec 100%);
+  color: #181818;
+}
+
+.z-cell.cell-2:focus,
+.z-cell.cell-2:hover {
+  background: linear-gradient(120deg, #ff66cc 60%, #ffb347 100%);
+  color: #181818;
+}
+
+.z-cell.cell-3:focus,
+.z-cell.cell-3:hover {
+  background: linear-gradient(120deg, #aaffec 60%, #66ccff 100%);
+  color: #181818;
+}
+
+.z-cell.cell-4:focus,
+.z-cell.cell-4:hover {
+  background: linear-gradient(120deg, #ffb347 60%, #ff66cc 100%);
+  color: #181818;
+}
+
+.z-cell.cell-5:focus,
+.z-cell.cell-5:hover {
+  background: linear-gradient(120deg, #66ffb3 60%, #aaffd8 100%);
+  color: #181818;
+}
+
+/* General Z-Cell Hover/Focus Effects */
+.z-cell:focus,
+.z-cell:hover {
+  box-shadow: 0 8px 32px 0 #ff66cc44, 0 2px 12px #66ccff33, 0 0 20px 5px #66ccffaa;
+  border: 2px solid var(--color-accent);
+  outline: none; /* Remove default focus outline */
+  animation: glowPulseZCell 1.5s infinite alternate;
+  transform: translateY(-5px); /* Added subtle lift on hover/focus */
+}
+
+/* Z-Cell Text Color Change on Hover/Focus */
+.z-cell:focus h1,
+.z-cell:hover h1,
+.z-cell:focus h2,
+.z-cell:hover h2,
+.z-cell:focus strong,
+.z-cell:hover strong {
+  color: #181818; /* Dark text color for readability on light gradients */
+}
+
+/* Default Z-Cell Text Colors */
+.z-cell h1,
+.z-cell h2 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: color 0.4s;
+}
+
+.z-cell strong {
+  color: var(--color-accent);
+  transition: color 0.4s;
+}
+
+/* --- Media Box & Video Styling --- */
+.media-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #66ccff33;
+  padding: 2rem;
+  transition: box-shadow 0.4s, transform 0.4s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.media-box:hover {
+  transform: scale(1.03) rotateY(8deg) rotateX(5deg);
+  box-shadow: 0 4px 24px #66ccff33; /* Keep original shadow or adjust as needed */
+}
+
+.media-video {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px #66ccff44;
+  transition: box-shadow 0.4s;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.media-box:hover .media-video {
+  box-shadow: 0 4px 24px #ff66cc88;
+}
+
+.media-box-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.youtube-link {
+  margin-top: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.85;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.youtube-link:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 8px #ff66cc88;
+}
+
+/* Removed the problematic `z-cell * { text-align: center !important; }` */
+/* The `text-align: center;` on `.z-cell` and `justify-content: center;` should handle this */
+
+/* --- Play Button Styling --- */
+@keyframes floatPlayBtn {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, -8px);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Initial centering */
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px #66ccff55;
+  cursor: pointer;
+  animation: floatPlayBtn 2s infinite;
+  transition: background 0.3s;
+  z-index: 2;
+}
+
+.play-btn:hover {
+  background: var(--color-accent);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .z-pattern {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 1.5rem 0;
+    padding: 1.2rem 0.2rem;
+    width: 100%;
+    margin: 1.2rem 0;
+  }
+
+  .z-cell {
+    width: 100%;
+    min-width: 0;
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .z-cell {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.98rem;
+  }
+
+  .media-box {
+    padding: 1rem;
+  }
+
+  .media-video {
+    max-width: 100%;
+  }
+}
+
+/* --- Keyframe Animations --- */
+@keyframes glowPulseZCell {
+  0% {
+    box-shadow: 0 8px 32px 0 #ff66cc44, 0 2px 12px #66ccff33, 0 0 20px 5px #66ccffaa;
+  }
+
+  50% {
+    box-shadow: 0 10px 40px 0 #ff66cc66, 0 4px 16px #66ccff55, 0 0 25px 8px #66ccffcc;
+  }
+
+  100% {
+    box-shadow: 0 8px 32px 0 #ff66cc44, 0 2px 12px #66ccff33, 0 0 20px 5px #66ccffaa;
+  }
+}

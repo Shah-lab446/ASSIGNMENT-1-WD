@@ -1,0 +1,156 @@
+/* style.css is now split per page. Remove all page-specific CSS, keep only shared/base styles. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --color-primary: #66ccff;
+  --color-accent: #ff66cc;
+  --color-text: #e0e0e0;
+  --color-bg: #121212;
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+nav {
+  background: #1a1a1a;
+  color: #66ccff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 8px #66ccff44;
+  flex-shrink: 0;
+}
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #66ccff;
+  text-shadow: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+nav ul li {
+  cursor: pointer;
+}
+nav ul li a {
+  color: #66ccff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff66cc;
+  text-shadow: none;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: #66ccff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 0 8px #66ccff22 inset;
+  font-family: 'Poppins', Arial, sans-serif;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.content {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #66ccff33;
+  color: #e0e0e0;
+  font-family: 'Poppins', Arial, sans-serif;
+  text-shadow: none;
+  text-align: left; /* Align text left for F pattern */
+  line-height: 1.6;
+  display: block; /* Ensure block display */
+}
+
+/* Utility: Keyboard focus */
+:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Utility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility: Social links */
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+}
+.social-links li a {
+  color: #66ccff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.social-links li a:hover,
+.social-links li a.active {
+  color: #ff66cc;
+  text-shadow: none;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.footer-container p {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.social-logo {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  filter: none;
+}
