@@ -1,7 +1,7 @@
-/* style.css is now split per page. Remove all page-specific CSS, keep only shared/base styles. */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* CSS Variables */
+
 :root {
   --color-primary: #66ccff;
   --color-accent: #ff66cc;
@@ -9,7 +9,7 @@
   --color-bg: #121212;
 }
 
-/* Basic Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -94,18 +94,18 @@ footer {
   color: #e0e0e0;
   font-family: 'Poppins', Arial, sans-serif;
   text-shadow: none;
-  text-align: left; /* Align text left for F pattern */
+  text-align: left;
   line-height: 1.6;
-  display: block; /* Ensure block display */
+  display: block; 
 }
 
-/* Utility: Keyboard focus */
+
 :focus {
   outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* Utility: Reduce motion */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -115,7 +115,7 @@ footer {
   }
 }
 
-/* Utility: Social links */
+
 .social-links {
   list-style: none;
   display: flex;
