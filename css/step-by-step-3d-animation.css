@@ -1,4 +1,4 @@
-/* step-by-step-3d-animation.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
@@ -15,7 +15,7 @@ body {
 }
 
 nav, footer, .content, .media-box, .media-video, .youtube-link, .play-btn, .media-container {
-  /* ...existing code for shared layout and video box... */
+  
 }
 
 .z-container {
@@ -60,7 +60,7 @@ nav, footer, .content, .media-box, .media-video, .youtube-link, .play-btn, .medi
 
 .z-step:nth-child(even),
 .z-step:nth-child(odd) {
-  /* Remove gradient backgrounds, use default */
+  
   background: #1a1a1a;
   color: #e0e0e0;
 }
@@ -91,7 +91,7 @@ nav, footer, .content, .media-box, .media-video, .youtube-link, .play-btn, .medi
 
 .z-step:nth-of-type(5):hover, .z-step:nth-of-type(5):focus,
 .z-step:nth-child(5):hover, .z-step:nth-child(5):focus {
-  background: linear-gradient(120deg, #8e54e9 0%, #43cea2 100%) !important; /* Unique purple to teal gradient */
+  background: linear-gradient(120deg, #8e54e9 0%, #43cea2 100%) !important; 
   color: #181818 !important;
   box-shadow: 0 8px 32px 0 #43cea244, 0 2px 12px #8e54e933, 0 0 20px 5px #43cea2aa;
   border: 2px solid var(--color-accent);
