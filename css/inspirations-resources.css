@@ -40,12 +40,12 @@ body {
 .inspirations-resources {
   width: 100%;
   max-width: 100%;
-  padding: 0; /* remove all padding to take full width */
+  padding: 0; 
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  /* gap: 2rem; */ /* removed gap to eliminate right side space */
-  justify-content: stretch; /* changed from center to stretch */
+  
+  justify-content: stretch;
   margin: 0;
 }
 
@@ -54,7 +54,7 @@ html, body {
   padding-right: 0 !important;
 }
 
-/* Override padding on section.content.inspirations-resources to remove inline padding */
+
 section.content.inspirations-resources {
   padding: 0 !important;
 }
@@ -136,10 +136,10 @@ section.content.inspirations-resources {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  /* Add any additional styling for the gif container here */
+  
 }
 
-/* Fade-in animation */
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -151,7 +151,7 @@ section.content.inspirations-resources {
   transform: translateY(0);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .inspirations-resources {
     flex-direction: column;
